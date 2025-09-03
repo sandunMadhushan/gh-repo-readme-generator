@@ -304,7 +304,14 @@ export const generateReadme = async (repoDetails, selectedTemplate = null) => {
 
 ${templatePrompts}
 
-Make the README highly specific to this repository type, include relevant badges, and ensure all sections are tailored to the detected technology stack and project complexity.`;
+## IMPORTANT FORMATTING REQUIREMENTS:
+- Place ALL badges on the SAME LINE horizontally, separated by spaces
+- Example format: [![Badge1](url1)](link1) [![Badge2](url2)](link2) [![Badge3](url3)](link3)
+- DO NOT place badges on separate lines or in a vertical list
+- Include relevant badges for: license, build status, version, stars, forks, language, etc.
+- Ensure the badges section appears right after the title
+
+Make the README highly specific to this repository type, include relevant badges horizontally arranged, and ensure all sections are tailored to the detected technology stack and project complexity.`;
 
   // Use Google Gemini API
   const response = await fetch(
@@ -397,116 +404,140 @@ const getTemplatePrompt = (templateType) => {
   const templates = {
     comprehensive: `
 Create a comprehensive README with ALL sections including:
-1. Detailed project overview with value proposition
-2. Feature list with descriptions and checkboxes
-3. Live demo links and screenshots section
-4. Complete installation guide for multiple environments
-5. Detailed usage examples with code snippets
-6. API documentation if applicable
-7. Configuration and environment variables
-8. Testing instructions and coverage
-9. Deployment guide for multiple platforms
-10. Contributing guidelines with development setup
-11. Roadmap and future plans
-12. FAQ and troubleshooting
-13. License and legal information
-14. Acknowledgments and credits
-15. Contact and support information
+1. Project title
+2. Horizontal badge row (license, stars, forks, language, build status) - ALL ON ONE LINE
+3. Detailed project overview with value proposition
+4. Feature list with descriptions and checkboxes
+5. Live demo links and screenshots section
+6. Complete installation guide for multiple environments
+7. Detailed usage examples with code snippets
+8. API documentation if applicable
+9. Configuration and environment variables
+10. Testing instructions and coverage
+11. Deployment guide for multiple platforms
+12. Contributing guidelines with development setup
+13. Roadmap and future plans
+14. FAQ and troubleshooting
+15. License and legal information
+16. Acknowledgments and credits
+17. Contact and support information
+
+IMPORTANT: Ensure ALL badges are placed horizontally on a single line immediately after the title.
     `,
 
     startup: `
 Create a startup-focused README emphasizing:
-1. Problem statement and solution
-2. Key features and benefits for users
-3. Live demo and screenshots
-4. Quick start guide for immediate value
-5. User testimonials or social proof section
-6. Monetization model if applicable
-7. Market validation and metrics
-8. Team information and background
-9. Investor information if open source
-10. Community and social media links
+1. Project title with horizontal badge row (license, stars, demo status) - ALL ON ONE LINE
+2. Problem statement and solution
+3. Key features and benefits for users
+4. Live demo and screenshots
+5. Quick start guide for immediate value
+6. User testimonials or social proof section
+7. Monetization model if applicable
+8. Market validation and metrics
+9. Team information and background
+10. Investor information if open source
+11. Community and social media links
+
+IMPORTANT: Place ALL badges horizontally on one line after the title.
     `,
 
     library: `
 Create a library-focused README with:
-1. Clear description of what the library does
-2. Installation instructions for multiple package managers
-3. Quick start examples with common use cases
-4. Complete API documentation with parameters
-5. Code examples for different scenarios
-6. Browser and Node.js compatibility
-7. TypeScript definitions if applicable
-8. Performance benchmarks
-9. Comparison with similar libraries
-10. Contributing guidelines for library maintainers
+1. Library title with horizontal badges (license, npm version, downloads, build) - ALL ON ONE LINE
+2. Clear description of what the library does
+3. Installation instructions for multiple package managers
+4. Quick start examples with common use cases
+5. Complete API documentation with parameters
+6. Code examples for different scenarios
+7. Browser and Node.js compatibility
+8. TypeScript definitions if applicable
+9. Performance benchmarks
+10. Comparison with similar libraries
+11. Contributing guidelines for library maintainers
+
+IMPORTANT: Ensure badges are displayed horizontally in a single row.
     `,
 
     open_source: `
 Create an open-source focused README with:
-1. Project mission and vision
-2. Community guidelines and code of conduct
-3. Detailed contributing instructions
-4. Issue templates and bug reporting
-5. Development environment setup
-6. Testing and quality assurance
-7. Release process and versioning
-8. Community recognition and contributors
-9. Governance and decision-making process
-10. Sponsorship and funding information
+1. Project title with horizontal badges (license, contributors, build status) - ALL ON ONE LINE
+2. Project mission and vision
+3. Community guidelines and code of conduct
+4. Detailed contributing instructions
+5. Issue templates and bug reporting
+6. Development environment setup
+7. Testing and quality assurance
+8. Release process and versioning
+9. Community recognition and contributors
+10. Governance and decision-making process
+11. Sponsorship and funding information
+
+IMPORTANT: Display all badges horizontally on one line.
     `,
 
     portfolio: `
 Create a portfolio-focused README showcasing:
-1. Project overview and personal motivation
-2. Technologies and skills demonstrated
-3. Key features and innovative aspects
-4. Live demo with multiple deployment links
-5. Screenshots and visual demonstrations
-6. Development process and challenges overcome
-7. Lessons learned and skills gained
-8. Future improvements and iterations
-9. Related projects and portfolio links
-10. Contact information and social profiles
+1. Project title with horizontal badges (demo, license, tech stack) - ALL ON ONE LINE
+2. Project overview and personal motivation
+3. Technologies and skills demonstrated
+4. Key features and innovative aspects
+5. Live demo with multiple deployment links
+6. Screenshots and visual demonstrations
+7. Development process and challenges overcome
+8. Lessons learned and skills gained
+9. Future improvements and iterations
+10. Related projects and portfolio links
+11. Contact information and social profiles
+
+IMPORTANT: Badges must be arranged horizontally on a single line.
     `,
 
     academic: `
 Create an academic-focused README with:
-1. Research abstract and objectives
-2. Methodology and experimental design
-3. Dataset description and sources
-4. Results and findings summary
-5. Installation for research reproduction
-6. Code structure and algorithm explanation
-7. Citation information and BibTeX
-8. Related publications and papers
-9. Acknowledgments to advisors and institutions
-10. Future research directions
+1. Research title with horizontal badges (license, DOI, publication status) - ALL ON ONE LINE
+2. Research abstract and objectives
+3. Methodology and experimental design
+4. Dataset description and sources
+5. Results and findings summary
+6. Installation for research reproduction
+7. Code structure and algorithm explanation
+8. Citation information and BibTeX
+9. Related publications and papers
+10. Acknowledgments to advisors and institutions
+11. Future research directions
+
+IMPORTANT: Display badges horizontally in one row after the title.
     `,
 
     enterprise: `
 Create an enterprise-focused README with:
-1. Business value proposition
-2. Security and compliance information
-3. Enterprise installation and deployment
-4. Scalability and performance metrics
-5. Integration with enterprise systems
-6. Support and SLA information
-7. Documentation and training resources
-8. Change management and updates
-9. Backup and disaster recovery
-10. Vendor contact and procurement information
+1. Product title with horizontal badges (license, version, security status) - ALL ON ONE LINE
+2. Business value proposition
+3. Security and compliance information
+4. Enterprise installation and deployment
+5. Scalability and performance metrics
+6. Integration with enterprise systems
+7. Support and SLA information
+8. Documentation and training resources
+9. Change management and updates
+10. Backup and disaster recovery
+11. Vendor contact and procurement information
+
+IMPORTANT: All badges should be on the same horizontal line.
     `,
 
     minimalist: `
 Create a clean, minimalist README with only essentials:
-1. Brief project description (2-3 sentences)
-2. Quick installation (1-2 commands)
-3. Basic usage example
-4. Link to documentation if exists
-5. License information
-6. Contact or issues link
-Keep it clean, scannable, and under 100 lines.
+1. Project title with essential horizontal badges (license, stars) - ALL ON ONE LINE
+2. Brief project description (2-3 sentences)
+3. Quick installation (1-2 commands)
+4. Basic usage example
+5. Link to documentation if exists
+6. License information
+7. Contact or issues link
+
+Keep it clean, scannable, and under 100 lines. IMPORTANT: Badges must be horizontal.
     `,
   };
 

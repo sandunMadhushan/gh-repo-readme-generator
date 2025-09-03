@@ -24,6 +24,7 @@ import {
 } from "react-icons/fa";
 import "./App.css";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -157,7 +158,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen overflow-auto bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen w-full overflow-auto bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -165,24 +166,24 @@ function App() {
         <div className="absolute bottom-40 left-40 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 container max-w-7xl mx-auto px-6 py-8 min-h-full">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-8 min-h-full">
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl mb-6 shadow-2xl">
             <FaMagic className="text-3xl text-white" />
           </div>
-          <h1 className="text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent mb-4">
             README Studio
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4">
             Create stunning, professional README files with AI-powered
             intelligence and modern design
           </p>
         </div>
 
         {/* Main Input Card */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/[0.07] transition-all duration-300">
+        <div className="w-full max-w-6xl mx-auto mb-12">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl hover:bg-white/[0.07] transition-all duration-300">
             {/* Input Mode Selection */}
             <div className="flex justify-center mb-8">
               <div className="inline-flex bg-black/30 backdrop-blur-sm rounded-2xl p-1.5 border border-white/10">
@@ -326,7 +327,7 @@ function App() {
 
         {/* Error Display */}
         {error && (
-          <div className="max-w-4xl mx-auto mb-8">
+          <div className="w-full max-w-6xl mx-auto mb-8">
             <div className="bg-red-500/20 border border-red-500/30 rounded-2xl p-6 backdrop-blur-lg">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -345,8 +346,8 @@ function App() {
 
         {/* Repository Analysis */}
         {repoData && (
-          <div className="max-w-6xl mx-auto mb-8">
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/[0.07] transition-all duration-300">
+          <div className="w-full max-w-full mx-auto mb-8 px-4">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl hover:bg-white/[0.07] transition-all duration-300">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
                   <FaFileAlt className="text-white text-xl" />
@@ -362,13 +363,15 @@ function App() {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
-                <div className="bg-black/30 rounded-xl p-4 backdrop-blur-sm border border-white/10">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 mb-8">
+                <div className="bg-black/30 rounded-xl p-3 sm:p-4 backdrop-blur-sm border border-white/10">
                   <div className="flex items-center gap-2 mb-2">
-                    <FaStar className="text-yellow-400" />
-                    <span className="text-gray-300 text-sm">Stars</span>
+                    <FaStar className="text-yellow-400 text-sm" />
+                    <span className="text-gray-300 text-xs sm:text-sm">
+                      Stars
+                    </span>
                   </div>
-                  <div className="text-white font-bold text-lg">
+                  <div className="text-white font-bold text-sm sm:text-lg">
                     {repoData.stargazers_count}
                   </div>
                 </div>
@@ -502,73 +505,82 @@ function App() {
 
         {/* Generated README Display */}
         {readme && (
-          <div className="max-w-6xl mx-auto mb-8">
+          <div className="w-full max-w-full mx-auto mb-8 px-4">
             <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl overflow-hidden shadow-2xl">
               {/* Header */}
-              <div className="bg-gradient-to-r from-purple-500/20 to-cyan-500/20 p-6 border-b border-white/20">
-                <div className="flex items-center justify-between">
+              <div className="bg-gradient-to-r from-purple-500/20 to-cyan-500/20 p-4 sm:p-6 border-b border-white/20">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                      <FaFileAlt className="text-white" />
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                      <FaFileAlt className="text-white text-sm sm:text-base" />
                     </div>
                     <div>
-                      <h2 className="text-xl font-bold text-white">
+                      <h2 className="text-lg sm:text-xl font-bold text-white">
                         Generated README
                       </h2>
-                      <p className="text-gray-300 text-sm">
+                      <p className="text-gray-300 text-xs sm:text-sm">
                         Your professional documentation is ready!
                       </p>
                     </div>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <button
-                      className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                      className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-1 sm:gap-2 ${
                         viewMode === "preview"
                           ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white shadow-lg"
                           : "bg-black/30 text-gray-300 hover:bg-black/50 hover:text-white"
                       }`}
                       onClick={() => setViewMode("preview")}
                     >
-                      <FaEye /> Preview
+                      <FaEye className="text-xs sm:text-sm" />{" "}
+                      <span className="hidden sm:inline">Preview</span>
                     </button>
                     <button
-                      className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                      className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-1 sm:gap-2 ${
                         viewMode === "markdown"
                           ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white shadow-lg"
                           : "bg-black/30 text-gray-300 hover:bg-black/50 hover:text-white"
                       }`}
                       onClick={() => setViewMode("markdown")}
                     >
-                      <FaCode /> Markdown
+                      <FaCode className="text-xs sm:text-sm" />{" "}
+                      <span className="hidden sm:inline">Markdown</span>
                     </button>
                     <button
-                      className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                      className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-1 sm:gap-2 ${
                         copySuccess
                           ? "bg-green-500 text-white"
                           : "bg-blue-500 hover:bg-blue-600 text-white"
                       }`}
                       onClick={handleCopyToClipboard}
                     >
-                      <FaCopy /> {copySuccess ? "Copied!" : "Copy"}
+                      <FaCopy className="text-xs sm:text-sm" />{" "}
+                      <span className="hidden sm:inline">
+                        {copySuccess ? "Copied!" : "Copy"}
+                      </span>
                     </button>
                     <button
-                      className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2"
+                      className="px-3 sm:px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-1 sm:gap-2"
                       onClick={handleDownloadReadme}
                     >
-                      <FaDownload /> Download
+                      <FaDownload className="text-xs sm:text-sm" />{" "}
+                      <span className="hidden sm:inline">Download</span>
                     </button>
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-8">
+              <div className="p-4 sm:p-6 lg:p-8">
                 {viewMode === "preview" ? (
-                  <ReactMarkdown className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-200 prose-a:text-purple-400 prose-code:text-pink-300 prose-pre:bg-black/50">
+                  <ReactMarkdown
+                    className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-200 prose-a:text-purple-400 prose-code:text-pink-300 prose-pre:bg-black/50 prose-table:border-white/20 prose-th:border-white/20 prose-td:border-white/20"
+                    remarkPlugins={[remarkGfm]}
+                  >
                     {readme}
                   </ReactMarkdown>
                 ) : (
-                  <pre className="p-6 overflow-x-auto text-sm text-green-300 whitespace-pre-wrap bg-black/50 rounded-xl border border-white/10">
+                  <pre className="p-4 sm:p-6 overflow-x-auto text-xs sm:text-sm text-green-300 whitespace-pre-wrap bg-black/50 rounded-xl border border-white/10">
                     {readme}
                   </pre>
                 )}
@@ -578,15 +590,17 @@ function App() {
         )}
 
         {/* Footer */}
-        <footer className="text-center py-12 border-t border-white/10">
+        <footer className="w-full text-center py-8 sm:py-12 border-t border-white/10 mt-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <FaGithub className="text-2xl text-purple-400" />
-            <span className="text-white font-semibold">README Studio</span>
+            <FaGithub className="text-xl sm:text-2xl text-purple-400" />
+            <span className="text-white font-semibold text-sm sm:text-base">
+              README Studio
+            </span>
           </div>
-          <p className="text-gray-400 mb-2">
+          <p className="text-gray-400 mb-2 text-sm sm:text-base px-4">
             Crafted with ❤️ using modern web technologies
           </p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-xs sm:text-sm px-4">
             Powered by AI • Built for developers • Designed for impact
           </p>
         </footer>
