@@ -157,7 +157,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="h-screen overflow-auto bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -165,7 +165,7 @@ function App() {
         <div className="absolute bottom-40 left-40 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 container max-w-7xl mx-auto px-6 py-8">
+      <div className="relative z-10 container max-w-7xl mx-auto px-6 py-8 min-h-full">
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl mb-6 shadow-2xl">
@@ -182,14 +182,14 @@ function App() {
 
         {/* Main Input Card */}
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/[0.07] transition-all duration-300">
             {/* Input Mode Selection */}
             <div className="flex justify-center mb-8">
-              <div className="inline-flex bg-black/20 rounded-2xl p-2 backdrop-blur-sm">
+              <div className="inline-flex bg-black/30 backdrop-blur-sm rounded-2xl p-1.5 border border-white/10">
                 <button
                   className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                     inputMode === "separate"
-                      ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white shadow-lg transform scale-105"
+                      ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white shadow-lg transform scale-[1.02]"
                       : "text-gray-300 hover:text-white hover:bg-white/10"
                   }`}
                   onClick={() => setInputMode("separate")}
@@ -200,7 +200,7 @@ function App() {
                 <button
                   className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                     inputMode === "link"
-                      ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white shadow-lg transform scale-105"
+                      ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white shadow-lg transform scale-[1.02]"
                       : "text-gray-300 hover:text-white hover:bg-white/10"
                   }`}
                   onClick={() => setInputMode("link")}
@@ -221,7 +221,7 @@ function App() {
                   </label>
                   <input
                     type="text"
-                    className="w-full p-4 bg-black/30 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm transition-all duration-300"
+                    className="w-full p-4 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 backdrop-blur-sm transition-all duration-300 hover:bg-black/30"
                     placeholder="e.g., octocat"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -235,7 +235,7 @@ function App() {
                   </label>
                   <input
                     type="text"
-                    className="w-full p-4 bg-black/30 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm transition-all duration-300"
+                    className="w-full p-4 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 backdrop-blur-sm transition-all duration-300 hover:bg-black/30"
                     placeholder="e.g., Hello-World"
                     value={repo}
                     onChange={(e) => setRepo(e.target.value)}
@@ -251,7 +251,7 @@ function App() {
                 </label>
                 <input
                   type="text"
-                  className="w-full p-4 bg-black/30 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm transition-all duration-300"
+                  className="w-full p-4 bg-black/20 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 backdrop-blur-sm transition-all duration-300 hover:bg-black/30"
                   placeholder="https://github.com/username/repository"
                   value={repoLink}
                   onChange={(e) => setRepoLink(e.target.value)}
@@ -270,11 +270,17 @@ function App() {
                 <select
                   value={selectedTemplate}
                   onChange={(e) => setSelectedTemplate(e.target.value)}
-                  className="w-full p-4 bg-black/30 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm appearance-none"
+                  className="w-full p-4 bg-black/20 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 backdrop-blur-sm appearance-none transition-all duration-300 hover:bg-black/30 cursor-pointer"
                 >
-                  <option value="auto">🤖 Auto-Detect (Recommended)</option>
+                  <option value="auto" className="bg-gray-800">
+                    🤖 Auto-Detect (Recommended)
+                  </option>
                   {Object.values(TEMPLATES).map((template) => (
-                    <option key={template.id} value={template.id}>
+                    <option
+                      key={template.id}
+                      value={template.id}
+                      className="bg-gray-800"
+                    >
                       {template.icon} {template.name}
                     </option>
                   ))}
@@ -299,19 +305,19 @@ function App() {
 
             {/* Generate Button */}
             <button
-              className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 hover:from-purple-600 hover:via-pink-600 hover:to-cyan-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-3"
+              className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 hover:from-purple-600 hover:via-pink-600 hover:to-cyan-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-3 text-lg shadow-lg"
               onClick={handleFetchRepoDetails}
               disabled={loading}
             >
               {loading ? (
                 <>
                   <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  Generating Magic...
+                  <span>Generating Magic...</span>
                 </>
               ) : (
                 <>
-                  <FaPlay />
-                  Generate README Studio
+                  <FaPlay className="text-lg" />
+                  <span>Generate README Studio</span>
                 </>
               )}
             </button>
@@ -340,7 +346,7 @@ function App() {
         {/* Repository Analysis */}
         {repoData && (
           <div className="max-w-6xl mx-auto mb-8">
-            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/[0.07] transition-all duration-300">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
                   <FaFileAlt className="text-white text-xl" />
