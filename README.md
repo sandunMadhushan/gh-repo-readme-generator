@@ -1,64 +1,69 @@
-# Advanced GitHub README Generator
+# README Studio - GitHub Repository README Generator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.3.1-646CFF.svg)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.4-38B2AC.svg)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/) [![Vite](https://img.shields.io/badge/Vite-5.3.1-646CFF.svg)](https://vitejs.dev/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.4-38B2AC.svg)](https://tailwindcss.com/) [![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_SITE_ID/deploy-status)](https://app.netlify.com/sites/YOUR_SITE_NAME/deploys)
 
-A powerful, modern web application that generates comprehensive, professional README files for GitHub repositories using Google Gemini AI and GitHub API integration.
+A powerful, modern web application called **README Studio** that generates comprehensive, professional README files for GitHub repositories using Google Gemini AI and GitHub API integration. Create stunning, professional README files with AI-powered intelligence and modern design.
 
 ## ✨ Features
 
-### 🚀 Advanced README Generation
+### 🚀 AI-Powered README Generation
 
-- **Comprehensive Analysis**: Fetches detailed repository data including languages, contributors, releases, and file structure
-- **AI-Powered Content**: Uses Google Gemini AI to generate intelligent, context-aware README content
-- **Professional Structure**: Creates README files with 18+ sections including badges, table of contents, and detailed documentation
+- **Smart Repository Analysis**: Automatically fetches detailed repository data including languages, contributors, releases, and file structure
+- **Intelligent Content Generation**: Uses Google Gemini AI to create context-aware, repository-specific README content
+- **Template-Based System**: 8 different README templates (Comprehensive, Startup/MVP, Library/Package, Open Source, Portfolio, Academic, Enterprise, Minimalist)
+- **Auto-Detection**: Automatically detects repository type and suggests the most appropriate template
 
-### 📊 Repository Intelligence
+### 📊 Advanced Repository Intelligence
 
-- **Language Detection**: Automatically identifies tech stack and programming languages
+- **Technology Stack Detection**: Identifies programming languages, frameworks, and tools used
 - **Dependency Analysis**: Detects package.json, requirements.txt, Dockerfile, and other configuration files
-- **Release Information**: Includes latest releases and version history
-- **Contributor Recognition**: Lists top contributors and collaboration details
+- **Project Complexity Assessment**: Analyzes project structure and provides insights
+- **Activity Monitoring**: Checks repository maintenance status and activity levels
 
 ### 🎨 Modern User Experience
 
-- **Responsive Design**: Beautiful, mobile-friendly interface with Tailwind CSS
-- **Live Preview**: Toggle between markdown source and rendered preview
-- **Copy & Download**: Easy copy-to-clipboard and direct download functionality
+- **Full-Screen Responsive Design**: Optimized for all screen sizes and devices
+- **Dual Input Modes**: Support for both username/repo input and direct GitHub URL
+- **Live Preview & Markdown View**: Toggle between rendered preview and raw markdown
+- **Copy & Download Functionality**: Easy export options for generated README files
 - **Real-time Feedback**: Loading states, error handling, and success notifications
 
-### 📋 Generated README Sections
+### 📋 Comprehensive README Sections
 
-1. **Header with Professional Badges** - License, build status, stars, forks, language
-2. **Project Description** - Comprehensive overview and value proposition
+Generated READMEs include up to 18+ professional sections:
+
+1. **Horizontal Badge Display** - License, stars, forks, build status, language badges
+2. **Project Overview** - Description, value proposition, and key highlights
 3. **Table of Contents** - Clickable navigation for easy browsing
-4. **Features List** - Detailed feature breakdown with visual elements
-5. **Demo/Screenshots** - Placeholders for visual content
-6. **Prerequisites** - System requirements and dependencies
-7. **Installation & Setup** - Multi-method installation guides
-8. **Usage Examples** - Code snippets and practical examples
-9. **Configuration** - Environment variables and customization
-10. **API Documentation** - Endpoint descriptions (if applicable)
-11. **Contributing Guidelines** - Development setup and contribution process
-12. **Testing Information** - Test running and coverage details
-13. **Deployment Guide** - Platform-specific deployment instructions
-14. **Roadmap** - Future plans and upcoming features
-15. **FAQ & Troubleshooting** - Common questions and solutions
-16. **License Information** - Legal details and permissions
-17. **Acknowledgments** - Credits and third-party libraries
-18. **Contact & Support** - Maintainer info and community links
+4. **Feature Showcase** - Detailed feature breakdown with visual elements
+5. **Live Demo Links** - Deployment and demonstration URLs
+6. **Installation Guides** - Multi-platform setup instructions
+7. **Usage Examples** - Code snippets and practical implementations
+8. **API Documentation** - Endpoint descriptions and parameters (when applicable)
+9. **Configuration** - Environment variables and customization options
+10. **Testing Instructions** - Test running and coverage information
+11. **Deployment Guides** - Platform-specific deployment instructions
+12. **Contributing Guidelines** - Development setup and collaboration process
+13. **Roadmap & Future Plans** - Project direction and upcoming features
+14. **FAQ & Troubleshooting** - Common questions and solutions
+15. **License Information** - Legal details and permissions
+16. **Acknowledgments** - Credits and third-party libraries
+17. **Contact & Support** - Maintainer information and community links
+18. **Repository Statistics** - Stars, forks, issues, and activity metrics
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18.3.1 with modern hooks
-- **Styling**: Tailwind CSS 3.4.4 for responsive design
-- **Build Tool**: Vite 5.3.1 for fast development and builds
-- **Icons**: React Icons for beautiful UI elements
-- **Markdown**: React Markdown for live preview rendering
-- **AI Integration**: Google Gemini AI for intelligent content generation
-- **API**: GitHub REST API for comprehensive repository data
+- **Frontend Framework**: React 18.3.1 with modern hooks and functional components
+- **Styling**: Tailwind CSS 3.4.4 for responsive, utility-first design
+- **Build Tool**: Vite 5.3.1 for fast development and optimized builds
+- **UI Icons**: React Icons 5.2.1 for beautiful, scalable iconography
+- **Markdown Rendering**: React Markdown 9.0.1 with GitHub Flavored Markdown support
+- **Markdown Extensions**: remark-gfm 4.0.1 for tables, strikethrough, and more
+- **AI Integration**: Google Gemini AI API for intelligent content generation
+- **API Integration**: GitHub REST API for comprehensive repository data
+- **Analytics**: Vercel Analytics for usage tracking
+- **Animation**: Framer Motion 11.2.12 for smooth animations
+- **Deployment**: Netlify with automatic deployments
 
 ## 📋 Prerequisites
 
@@ -73,8 +78,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/sandunMadhushan/repo-readme-generator.git
-cd repo-readme-generator
+git clone https://github.com/sandunMadhushan/gh-repo-readme-generator.git
+cd gh-repo-readme-generator
 ```
 
 ### 2. Install Dependencies
@@ -87,11 +92,14 @@ yarn install
 
 ### 3. Environment Configuration
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the root directory with your Google Gemini API key:
 
 ```env
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
+# Google Gemini API Configuration
+VITE_GEMINI_API_KEY=AIzaSyAeAUwb3kqltS3yImBdRIz2oLMOni3uAvs
 ```
+
+**Note**: Replace the API key above with your own valid Google Gemini API key. Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 
 ### 4. Start Development Server
 
@@ -111,33 +119,61 @@ yarn build
 
 ## 🚀 Usage
 
-1. **Open the Application**: Navigate to `http://localhost:5173` in your browser
-2. **Enter Repository Details**:
-   - GitHub username (e.g., "octocat")
-   - Repository name (e.g., "Hello-World")
-3. **Generate README**: Click "Generate Advanced README" button
-4. **Review & Customize**: The app will analyze the repository and generate a comprehensive README
-5. **Export**: Use the copy or download buttons to save your README
+1. **Open the Application**: Navigate to `http://localhost:5174` in your browser (Vite may use different ports if 5173 is occupied)
+2. **Choose Input Method**:
+   - **Username & Repo**: Enter GitHub username and repository name separately
+   - **Repository URL**: Paste the complete GitHub repository URL
+3. **Select Template Style**: Choose from 8 available templates or use auto-detect (recommended)
+4. **Generate README**: Click "Generate README Studio" button
+5. **Review Content**: The app analyzes the repository and generates a comprehensive README
+6. **Preview & Edit**: Toggle between preview and markdown view
+7. **Export**: Use copy or download buttons to save your README
 
-### Example Usage
+### Input Examples
+
+**Username & Repo Mode:**
 
 ```
 Username: facebook
 Repository: react
-Result: Comprehensive README with React-specific features, installation guides, and community information
 ```
+
+**Repository URL Mode:**
+
+```
+URL: https://github.com/facebook/react
+URL: https://github.com/vercel/next.js
+URL: https://github.com/microsoft/vscode
+```
+
+### Template Types
+
+- 🤖 **Auto-Detect** (Recommended) - Intelligently selects the best template
+- 📚 **Comprehensive** - Complete README with all possible sections
+- 🚀 **Startup/MVP** - Focus on product features and user acquisition
+- 🌟 **Open Source** - Emphasizes community and collaboration
+- 📦 **Library/Package** - API documentation and usage examples
+- 💼 **Portfolio** - Showcase skills and technologies
+- 🎓 **Academic/Research** - Research methodology and citations
+- 🏢 **Enterprise** - Professional documentation with compliance focus
+- ✨ **Minimalist** - Clean, simple README with essentials only
 
 ## ⚙️ Configuration
 
 ### Environment Variables
 
 - `VITE_GEMINI_API_KEY`: Your Google Gemini API key for README generation
+  - **Required**: Yes
+  - **Format**: String (API key from Google AI Studio)
+  - **Example**: `AIzaSyAeAUwb3kqltS3yImBdRIz2oLMOni3uAvs`
 
 ### Customization Options
 
-- Modify prompts in `src/services/geminiService.js` for different README styles
-- Adjust UI components in `src/App.jsx` for custom layouts
-- Update styling in `src/App.css` and Tailwind configuration
+- **AI Prompts**: Modify templates in `src/services/geminiService.js` for different README styles
+- **UI Components**: Adjust interface elements in `src/App.jsx` for custom layouts
+- **Styling**: Update visual design in `src/App.css` and Tailwind configuration
+- **Badge Formatting**: Customize badge generation in the AI prompt templates
+- **Template System**: Add new README templates or modify existing ones
 
 ## 🤝 Contributing
 
@@ -181,7 +217,7 @@ npm run build && npm run preview
    - Option 1: Drag and drop the `dist` folder to Netlify's deploy interface
    - Option 2: Connect your GitHub repository for automatic deployments
 3. **Add Environment Variables**: In Netlify dashboard, go to Site settings > Environment variables and add:
-   - `VITE_GEMINI_API_KEY` = `your_gemini_api_key_here`
+   - `VITE_GEMINI_API_KEY` = `AIzaSyAeAUwb3kqltS3yImBdRIz2oLMOni3uAvs`
 4. **Build Settings** (if using GitHub integration):
    - Build command: `npm run build`
    - Publish directory: `dist`
@@ -194,13 +230,19 @@ npm run build && npm run preview
 
 ## 🗺️ Roadmap
 
-- [ ] **Template System**: Pre-built README templates for different project types
+- [x] **Template System**: 8 pre-built README templates for different project types
+- [x] **Repository Analysis**: Advanced GitHub API integration with comprehensive data
+- [x] **Badge Generation**: Horizontal badge formatting for professional appearance
+- [x] **Responsive Design**: Full-screen layout optimized for all devices
+- [x] **Markdown Tables**: Proper table rendering with GitHub Flavored Markdown
 - [ ] **Multi-language Support**: Generate READMEs in different languages
 - [ ] **Custom Sections**: Allow users to add custom sections and content
 - [ ] **GitHub Integration**: Direct commit to repository functionality
 - [ ] **Batch Processing**: Generate READMEs for multiple repositories
-- [ ] **Analytics**: Track README generation statistics
+- [ ] **Analytics Dashboard**: Track README generation statistics
 - [ ] **Team Collaboration**: Share and collaborate on README templates
+- [ ] **Export Formats**: Support for PDF, HTML, and other formats
+- [ ] **Integration APIs**: REST API for programmatic README generation
 
 ## 📄 License
 
@@ -218,11 +260,22 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact & Support
 
 - **Developer**: [Sandun Madhushan](https://github.com/sandunMadhushan)
-- **GitHub**: [Repository Issues](https://github.com/sandunMadhushan/repo-readme-generator/issues)
+- **GitHub Repository**: [gh-repo-readme-generator](https://github.com/sandunMadhushan/gh-repo-readme-generator)
+- **Issues & Bug Reports**: [GitHub Issues](https://github.com/sandunMadhushan/gh-repo-readme-generator/issues)
+- **Feature Requests**: [GitHub Discussions](https://github.com/sandunMadhushan/gh-repo-readme-generator/discussions)
 - **Email**: For direct support and collaboration opportunities
+
+### Support the Project
+
+If you find README Studio helpful, please consider:
+
+- ⭐ **Starring** the repository on GitHub
+- 🐛 **Reporting bugs** or suggesting features
+- 🤝 **Contributing** to the codebase
+- 📢 **Sharing** with other developers
 
 ---
 
-**Made with ❤️ by the Open Source Community**
+**Made with ❤️ by [Sandun Madhushan](https://github.com/sandunMadhushan)**
 
-_Generate professional READMEs that make your projects shine! ⭐_
+_Create stunning, professional READMEs that make your repositories shine! ✨_
